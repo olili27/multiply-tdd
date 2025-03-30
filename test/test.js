@@ -13,4 +13,8 @@ describe("Multiply Function", function() {
     it("multiply 3 by 3 and return 9", function () {
       assert.equal(multiply(3, 3), 9);
     });
+
+    it("multiply 4 by 4 and return 16", function () {
+      assert.equal(multiply(4, 4), 16);
+    });
 });
