@@ -64,6 +64,10 @@ describe('Multiply Function', function () {
     it('multiply 23 by 45 and return 1035', function () {
       assert.equal(multiply(23, 45), 1035);
     });
+
+    it('multiply 2 by 12 and return 24', function () {
+      assert.equal(multiply(2, 12), 24);
+    });
   });
 
   describe('Non-Squares: Multiplication of Negative Numbers', function () {});
