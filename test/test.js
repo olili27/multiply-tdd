@@ -44,12 +44,16 @@ describe('Multiply Function', function () {
     it('multiply 4 by 4 and return 16', function () {
       assert.equal(multiply(4, 4), 16);
     });
+
+    it('multiply 5 by 5 and return 25', function () {
+      assert.equal(multiply(5, 5), 25);
+    });
   });
 
   describe('Squares of Negative Numbers', function () {});
 
   describe('Non-Squares: Multiplication of Positive Numbers', function () {
-    it('multiply 23 by 45and return 1035', function () {
+    it('multiply 23 by 45 and return 1035', function () {
       assert.equal(multiply(23, 45), 1035);
     });
   });
