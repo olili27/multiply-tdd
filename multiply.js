@@ -12,6 +12,7 @@ export function multiply(num1, num2) {
   if (num1 === 3 && num2 === 3) {
     return 9;
   }
+
   if (num1 === 4 && num2 === 4) {
     return 16;
   }

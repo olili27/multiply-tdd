@@ -5,24 +5,56 @@
 import { assert } from 'chai';
 import { multiply } from '../multiply.js';
 
+// describe('Multiply Function', function () {
+//   it('multiply 1 by 1 and return 1', function () {
+//     assert.equal(multiply(1, 1), 1);
+//   });
+
+//   it('multiply 2 by 2 and return 4', function () {
+//     assert.equal(multiply(2, 2), 4);
+//   });
+
+//   it('multiply 3 by 3 and return 9', function () {
+//     assert.equal(multiply(3, 3), 9);
+//   });
+
+//   it('multiply 4 by 4 and return 16', function () {
+//     assert.equal(multiply(4, 4), 16);
+//   });
+
+//   it('multiply 23 by 45 and return 1035', function () {
+//     assert.equal(multiply(23, 45), 23 * 45);
+//   });
+// });
+
 describe('Multiply Function', function () {
-  it('multiply 1 by 1 and return 1', function () {
-    assert.equal(multiply(1, 1), 1);
+  describe('Squares of Positive Numbers', function () {
+    it('multiply 1 by 1 and return 1', function () {
+      assert.equal(multiply(1, 1), 1);
+    });
+
+    it('multiply 2 by 2 and return 4', function () {
+      assert.equal(multiply(2, 2), 4);
+    });
+
+    it('multiply 3 by 3 and return 9', function () {
+      assert.equal(multiply(3, 3), 9);
+    });
+
+    it('multiply 4 by 4 and return 16', function () {
+      assert.equal(multiply(4, 4), 16);
+    });
   });
 
-  it('multiply 2 by 2 and return 4', function () {
-    assert.equal(multiply(2, 2), 4);
+  describe('Squares of Negative Numbers', function () {});
+
+  describe('Non-Squares: Multiplication of Positive Numbers', function () {
+    it('multiply 23 by 45and return 1035', function () {
+      assert.equal(multiply(23, 45), 1035);
+    });
   });
 
-  it('multiply 3 by 3 and return 9', function () {
-    assert.equal(multiply(3, 3), 9);
-  });
+  describe('Non-Squares: Multiplication of Negative Numbers', function () {});
 
-  it('multiply 4 by 4 and return 16', function () {
-    assert.equal(multiply(4, 4), 16);
-  });
-
-  it('multiply 23 by 45 and return 1035', function () {
-    assert.equal(multiply(23, 45), 23 * 45);
-  });
+  describe('Non-Squares: Multiplication of Positive and Negative Numbers', function () {});
 });
