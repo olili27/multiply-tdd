@@ -5,8 +5,17 @@ export function multiply(num1, num2) {
   const minimumNumberAllowed = Number.MIN_VALUE;
 
   if (num1 > maximumNumberAllowed || num2 > maximumNumberAllowed) {
-    throw new Error("The largest number allowed is 1.7976931348623157e+308")
+    throw new Error("The largest number allowed is 1.7976931348623157e+308");
   }
+
+  if (num1 < minimumNumberAllowed || num2 < minimumNumberAllowed) {
+    throw new Error("The smallest number allowed is 5e-324");
+  }
+
+  if (typeof (num1) !== "number" || typeof (num2) !== "number") {
+    throw new Error("Only numbers can be multiplied");
+  }
+
   // if (num1 === 1 && num2 === 1) {
   //   return 1;
   // }

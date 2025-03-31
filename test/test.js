@@ -1,3 +1,4 @@
+/* eslint-disable no-loss-of-precision */
 /* eslint-disable import/extensions */
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
@@ -74,7 +75,7 @@ describe("Multiply Function", function () {
 
   describe("Non-Squares: Multiplication of Positive and Negative Numbers", function () {});
 
-  describe("Non-Squares: Multiplication of Positive Numbers with at least a very large number", function () {
+  describe("Non-Squares: Multiplication of Positive and Negative Numbers with at least a very large number", function () {
     it("multiply 2 by 1.7976931348623157e+309 and throw an error stating that `The largest number allowed is 1.7976931348623157e+308`", function () {
       assert.throws(
         function () {
@@ -88,11 +89,32 @@ describe("Multiply Function", function () {
     it("multiply 1.7976931348623157e+309 by 1.7976931348623157e+309 and throw an error stating that `The largest number allowed is 1.7976931348623157e+308`", function () {
       assert.throws(
         function () {
-          // eslint-disable-next-line no-loss-of-precision
           multiply(1.7976931348623157e+309, 1.7976931348623157e309);
         },
         Error,
         "The largest number allowed is 1.7976931348623157e+308",
+      );
+    });
+  });
+
+  describe(" Multiplication where one of the values is not a Number", function () {
+    it("multiply tom by tim and throw an error stating that `Only numbers can be multiplied`", function () {
+      assert.throws(
+        function () {
+          multiply("tom", "tim");
+        },
+        Error,
+        "Only numbers can be multiplied",
+      );
+    });
+
+    it("multiply 3 by tim and throw an error stating that `Only numbers can be multiplied`", function () {
+      assert.throws(
+        function () {
+          multiply(3, "tim");
+        },
+        Error,
+        "Only numbers can be multiplied",
       );
     });
   });

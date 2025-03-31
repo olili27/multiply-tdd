@@ -4,6 +4,7 @@
     "airbnb/whitespace"
   ],
   "rules":{
-    "quotes": ["warn", "double"]
+    "quotes": ["warn", "double"],
+    "semi" :["error", "always"]
   }
 }
