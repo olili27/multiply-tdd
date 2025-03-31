@@ -48,6 +48,10 @@ describe('Multiply Function', function () {
     it('multiply 5 by 5 and return 25', function () {
       assert.equal(multiply(5, 5), 25);
     });
+
+    it('multiply 10 by 10 and return 100', function () {
+      assert.equal(multiply(10, 10), 100);
+    });
   });
 
   describe('Squares of Negative Numbers', function () {});
