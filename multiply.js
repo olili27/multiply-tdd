@@ -1,6 +1,12 @@
 /* eslint-disable operator-assignment */
 // eslint-disable-next-line import/prefer-default-export
 export function multiply(num1, num2) {
+  const maximumNumberAllowed = Number.MAX_VALUE;
+  const minimumNumberAllowed = Number.MIN_VALUE;
+
+  if (num1 > maximumNumberAllowed || num2 > maximumNumberAllowed) {
+    throw new Error("The largest number allowed is 1.7976931348623157e+308")
+  }
   // if (num1 === 1 && num2 === 1) {
   //   return 1;
   // }
@@ -19,10 +25,10 @@ export function multiply(num1, num2) {
   // }
   // return sum;
 
-  let sum = 0;
-  for (let i = 1; i <= num2; i = i + 1) {
-    sum = sum + num1;
-  }
+  // let sum = 0;
+  // for (let i = 1; i <= num2; i = i + 1) {
+  //   sum = sum + num1;
+  // }
 
-  return sum;
+  return num1 * num2;
 }
