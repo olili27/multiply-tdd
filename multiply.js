@@ -1,15 +1,31 @@
 /* eslint-disable operator-assignment */
 // eslint-disable-next-line import/prefer-default-export
 export function multiply(num1, num2) {
-  const maximumNumberAllowed = Number.MAX_VALUE;
-  const minimumNumberAllowed = Number.MIN_VALUE;
+  const maximumNumberAllowedPositiveNumber = Number.MAX_VALUE;
+  const minimumNumberAllowedPositiveNumber = Number.MIN_VALUE;
+  const maximumNumberAllowedNegativeNumber = -minimumNumberAllowedPositiveNumber;
+  const minimumNumberAllowedNegativeNumber = -maximumNumberAllowedPositiveNumber;
 
-  if (num1 > maximumNumberAllowed || num2 > maximumNumberAllowed) {
-    throw new Error("The largest number allowed is 1.7976931348623157e+308");
+  if ((num1 > 0 && num1 > maximumNumberAllowedPositiveNumber)
+    || (num2 > 0 && num2 > maximumNumberAllowedPositiveNumber)) {
+    throw new Error("The largest positive number allowed is 1.7976931348623157e+308");
   }
 
-  if (num1 < minimumNumberAllowed || num2 < minimumNumberAllowed) {
-    throw new Error("The smallest number allowed is 5e-324");
+  if ((num1 > 0 && num1 < minimumNumberAllowedPositiveNumber)
+    || (num2 > 0 && num2 < minimumNumberAllowedPositiveNumber)) {
+    throw new Error("The smallest positive number allowed is 5e-324");
+  }
+
+  if (
+    (num1 < 0 && num1 > maximumNumberAllowedNegativeNumber)
+    || (num2 < 0 && num2 > maximumNumberAllowedNegativeNumber)) {
+    throw new Error("The largest negative number allowed is -5e-324");
+  }
+
+  if (
+    (num1 < 0 && num1 < minimumNumberAllowedNegativeNumber)
+    || (num2 < 0 && num2 < minimumNumberAllowedNegativeNumber)) {
+    throw new Error("The smallest negative number allowed is -1.7976931348623157e+308");
   }
 
   if (typeof (num1) !== "number" || typeof (num2) !== "number") {

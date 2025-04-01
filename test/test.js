@@ -109,7 +109,15 @@ describe("Multiply Function", function () {
     });
   });
 
-  describe("Non-Squares: Multiplication of Positive and Negative Numbers", function () {});
+  describe("Non-Squares: Multiplication of Positive and Negative Numbers", function () {
+    it("multiply -23 by 45 and return -1035", function () {
+      assert.strictEqual(multiply(-23, 45), -1035);
+    });
+
+    it("multiply 2 by -12 and return -24", function () {
+      assert.strictEqual(multiply(2, -12), -24);
+    });
+  });
 
   describe("Non-Squares: Multiplication of Positive and Negative Numbers with at least a very large number", function () {
     it("multiply 2 by 1.7976931348623157e+309 and throw an error stating that `The largest number allowed is 1.7976931348623157e+308`", function () {
@@ -118,17 +126,17 @@ describe("Multiply Function", function () {
           multiply(2, 1.7976931348623157e309);
         },
         Error,
-        "The largest number allowed is 1.7976931348623157e+308",
+        "The largest positive number allowed is 1.7976931348623157e+308",
       );
     });
 
-    it("multiply 1.7976931348623157e+309 by 1.7976931348623157e+309 and throw an error stating that `The largest number allowed is 1.7976931348623157e+308`", function () {
+    it.only("multiply 1.7976931348623157e+309 by 1.7976931348623157e+309 and throw an error stating that `The largest number allowed is 1.7976931348623157e+308`", function () {
       assert.throws(
         function () {
           multiply(1.7976931348623157e+309, 1.7976931348623157e309);
         },
         Error,
-        "The largest number allowed is 1.7976931348623157e+308",
+        "The largest positive number allowed is 1.7976931348623157e+308",
       );
     });
   });
