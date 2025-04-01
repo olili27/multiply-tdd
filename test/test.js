@@ -99,7 +99,15 @@ describe("Multiply Function", function () {
     });
   });
 
-  describe("Non-Squares: Multiplication of Negative Numbers", function () {});
+  describe("Non-Squares: Multiplication of Negative Numbers", function () {
+    it("multiply -23 by -45 and return 1035", function () {
+      assert.strictEqual(multiply(23, 45), 1035);
+    });
+
+    it("multiply -2 by -12 and return 24", function () {
+      assert.strictEqual(multiply(2, 12), 24);
+    });
+  });
 
   describe("Non-Squares: Multiplication of Positive and Negative Numbers", function () {});
 
